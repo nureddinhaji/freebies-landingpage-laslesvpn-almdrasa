@@ -1,0 +1,14 @@
+@use "./sass/reset";
+@use "./sass/variables" as *;
+@use "./sass/header";
+
+
+body {
+    font-family: "Rubik", sans-serif;
+    font-size: 1.6rem;
+    color: $text-color;
+}
+.container {
+    max-width: 130rem;
+    margin: 0 auto;
+}

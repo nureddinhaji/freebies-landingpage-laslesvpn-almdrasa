@@ -1,0 +1,41 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.header {
+    padding-top: 3rem;
+    &__container {
+        @include flex($j: space-between, $a: center);
+    }
+    &__list {
+        @include flex(null, 4rem, center, center);
+    }
+    &__link {
+        transition: $transition;
+        &:hover,
+        &:active {
+            color: $main-color;
+        }
+    }
+    &__button {
+        font-weight: 500;
+        color: $black;
+        transition: $transition;
+        &--signup {
+            padding: 1rem;
+            border-radius: 50px;
+            border: 1px solid $main-color;
+            width: 15rem;
+            display: inline-flex;
+            justify-content: center;
+            color: $main-color;
+            margin-inline-start: 2rem;
+            &:hover {
+                background-color: $main-color;
+                color: white;
+            }
+        }
+        &--signin:hover {
+            color: $main-color
+        }
+    }
+}
