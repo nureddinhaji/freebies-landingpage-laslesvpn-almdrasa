@@ -1,6 +1,7 @@
 @use "./sass/reset";
 @use "./sass/variables" as *;
 @use "./sass/header";
+@use "./sass/sections";
 
 
 body {
@@ -11,4 +12,10 @@ body {
 .container {
     max-width: 130rem;
     margin: 0 auto;
+}
+.main {
+    margin-top: 7rem;
+    display: grid;
+    gap: 10rem;
+    justify-items: center;
 }

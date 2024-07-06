@@ -3,9 +3,7 @@
 
 .header {
     padding-top: 3rem;
-    &__container {
-        @include flex($j: space-between, $a: center);
-    }
+    @include flex($j: space-between, $a: center);
     &__list {
         @include flex(null, 4rem, center, center);
     }
@@ -13,7 +11,7 @@
         transition: $transition;
         &:hover,
         &:active {
-            color: $main-color;
+            color: $primary-color;
         }
     }
     &__button {
@@ -23,19 +21,21 @@
         &--signup {
             padding: 1rem;
             border-radius: 50px;
-            border: 1px solid $main-color;
+            border: 1px solid $primary-color;
             width: 15rem;
             display: inline-flex;
             justify-content: center;
-            color: $main-color;
-            margin-inline-start: 2rem;
+            color: $primary-color;
             &:hover {
-                background-color: $main-color;
+                background-color: $primary-color;
                 color: white;
             }
         }
-        &--signin:hover {
-            color: $main-color
+        &--signin {
+            margin-inline-end: 2rem;
+            &:hover {
+                color: $primary-color;
+            }
         }
     }
 }
