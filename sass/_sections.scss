@@ -36,10 +36,8 @@
         font-weight: 700;
         text-align: center;
         margin-top: 4rem;
-        &--background {
-            background-color: $secondary-color;
-            color: white;
-        }
+        background-color: $secondary-color;
+        color: white;
         box-shadow: $primary-color 0px 25px 72px -12px;
     }
     &__image {
@@ -54,7 +52,7 @@
     padding: 4rem;
     height: 20rem;
     width: 100%;
-    box-shadow: #0d1025 0px 14px 68px -55px;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
     &__box {
         @extend %flex-center;
         gap: 3rem;
@@ -131,8 +129,9 @@
         padding: 5rem 7rem;
         text-align: center;
         height: 76rem;
+        transition: $transition;
         @include flex(column, 3rem);
-        &--selected {
+        &:hover {
             border-color: $primary-color;
         }
         &-title {
@@ -167,9 +166,6 @@
             @extend .header__button;
             @extend .header__button--signup;
             margin-top: 2rem;
-            &--selected {
-                @extend .header__button--signup, :hover;
-            }
         }
     }
 }
@@ -188,5 +184,107 @@
     }
     &__image {
         width: 100%;
+    }
+}
+
+// Testimonials Section
+.testimonials {
+    @extend .map;
+    &__header {
+        @extend .map__header;
+    }
+    &__h2 {
+        @extend .map__h2;
+    }
+    &__description {
+        @extend .map__description;
+    }
+    &__comments {
+        @include flex($g: 4rem);
+        overflow: auto;
+    }
+    &__comment {
+        border: 2px solid $borders-color;
+        border-radius: 1rem;
+        min-width: 40rem;
+        padding: 3rem;
+
+        &-header {
+            @include flex($g: 2rem, $a: center);
+        }
+        &-text {
+            line-height: 3rem;
+            margin-top: 1rem;
+        }
+    }
+    &__bio {
+        flex: 1;
+    }
+    &__name {
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: $black;
+    }
+    &__control {
+        @include flex($j: space-between, $a: center);
+        width: 100%;
+    }
+    &__dots {
+        @include flex($g: 1.5rem);
+    }
+    &__dot {
+        width: 1.5rem;
+        height: 1.5rem;
+        display: inline-block;
+        background-color: $borders-color;
+        border-radius: 50%;
+        transition: $transition;
+        &:hover,
+        &--active {
+            background-color: $primary-color;
+            border-radius: 2rem;
+        }
+        &--active {
+            width: 4.5rem;
+        }
+    }
+    &__arrows {
+        @include flex($g: 2rem);
+    }
+    &__left,
+    &__right {
+        width: 6rem;
+        height: 6rem;
+        border: 0.2rem solid $primary-color;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        fill: $primary-color;
+        transition: $transition;
+        &:hover {
+            fill: white;
+            background-color: $primary-color;
+        }
+    }
+}
+
+// Subscribe Section
+.subscribe {
+    @include flex($j: space-between);
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 5rem 7rem;
+    &__header {
+        @extend .map__header;
+    }
+    &__h2 {
+        @extend .map__h2;
+    }
+    &__description {
+        @extend .map__description;
+    }
+    &__button {
+        @extend .hero__button;
     }
 }
