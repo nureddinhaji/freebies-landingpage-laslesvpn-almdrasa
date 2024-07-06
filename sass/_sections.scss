@@ -112,6 +112,7 @@
     @include flex(column, 6rem, center, center);
     &__header {
         text-align: center;
+        max-width: 55.5rem;
     }
     &__h2 {
         @extend .features__h2;
@@ -170,5 +171,22 @@
                 @extend .header__button--signup, :hover;
             }
         }
+    }
+}
+
+// Map Section
+.map {
+    @extend .plans;
+    &__header {
+        @extend .plans__header;
+    }
+    &__h2 {
+        @extend .plans__h2;
+    }
+    &__description {
+        @extend .plans__description;
+    }
+    &__image {
+        width: 100%;
     }
 }
