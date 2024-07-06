@@ -273,10 +273,12 @@
 .subscribe {
     @include flex($j: space-between);
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+    background-color: white;
     width: 100%;
     padding: 5rem 7rem;
     &__header {
-        @extend .map__header;
+        max-width: 37rem;
+        text-align: start;
     }
     &__h2 {
         @extend .map__h2;
@@ -286,5 +288,54 @@
     }
     &__button {
         @extend .hero__button;
+    }
+}
+
+// Footer Section
+.footer {
+    padding: 18rem 15rem;
+    background-color: #F8F8F8;
+    margin-top: -12.5rem;
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    &__about {
+        max-width: 34rem;
+        @include flex(column,2rem)
+    }
+    &__logo {
+        width: 15rem;
+    }
+    &__description {
+        line-height: 3rem;
+    }
+    &__socials {
+        display: flex;
+        gap: 2rem;
+    }
+    &__social {
+        width: 3.36rem;
+        height: 3.36rem;
+        background-color: white;
+        border-radius: 50%;
+        box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+        transition: $transition;
+        @include flex($j:center,$a:center);
+        &:hover {
+            background-color: $primary-color;
+            & .footer__svg {
+                fill: white;
+            }
+        }
+    }
+    &__svg {
+        width: 50%;
+        fill: $primary-color;
+    }
+    &__rights {
+        font-size: 1.6rem;
+        font-weight: 500;
+        color:#AFB5C0;
     }
 }
