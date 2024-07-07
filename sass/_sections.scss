@@ -38,7 +38,7 @@
         margin-top: 4rem;
         background-color: $secondary-color;
         color: white;
-        box-shadow: $primary-color 0px 25px 72px -12px;
+        box-shadow: rgba(245, 56, 56, 0.7) 0px 25px 72px -12px;
     }
     &__image {
         width: 100%;
@@ -165,7 +165,7 @@
         &-link {
             @extend .header__button;
             @extend .header__button--signup;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
     }
 }
@@ -208,13 +208,17 @@
         border-radius: 1rem;
         min-width: 40rem;
         padding: 3rem;
-
+        transition: $transition;
+        &:hover {
+            border-color: $primary-color;
+        }
         &-header {
             @include flex($g: 2rem, $a: center);
         }
         &-text {
             line-height: 3rem;
             margin-top: 1rem;
+            color: $black;
         }
     }
     &__bio {
@@ -223,6 +227,9 @@
     &__name {
         font-size: 1.8rem;
         font-weight: 500;
+        color: $black;
+    }
+    &__rate {
         color: $black;
     }
     &__control {
@@ -293,7 +300,7 @@
 
 // Footer Section
 .footer {
-    padding: 18rem 15rem;
+    padding: 18rem 15rem 10rem;
     background-color: #F8F8F8;
     margin-top: -12.5rem;
     &__container {
@@ -337,5 +344,26 @@
         font-size: 1.6rem;
         font-weight: 500;
         color:#AFB5C0;
+    }
+    &__Link-lists {
+        @include flex($j: space-between);
+    }
+    &__Links {
+        @include flex(column,1rem);
+        flex: 1;
+    }
+    &__title {
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: $black;
+    }
+    &__link {
+        padding: 0.55rem 0;
+        transition: $transition;
+        &:hover {
+            color: $primary-color;
+            font-weight: 500;
+        }
     }
 }
