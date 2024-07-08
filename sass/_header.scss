@@ -48,7 +48,8 @@
         &-line {
             width: 4rem;
             height: 0.3rem;
-            background-color: #f53855;
+            background-color: $primary-color;
+            transition: $transition;
         }
     }
 }
