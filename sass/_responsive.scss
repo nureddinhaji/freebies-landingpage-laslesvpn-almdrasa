@@ -1,0 +1,122 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+@media all and (max-width: 950px) {
+    .header__list {
+        gap: 2rem;
+    }
+    .plans__box {
+        padding: 5rem 3rem;
+    }
+    .footer {
+        padding: 18rem 0rem 5rem;
+    }
+}
+
+@media all and (max-width: 800px) {
+    .header {
+        gap: 2rem;
+    }
+    .header__menu {
+        display: block;
+        z-index: 1;
+    }
+    .header__menu-label {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    .header__logo {
+        flex: 1;
+        z-index: 1;
+    }
+    .header__nav {
+        @include flex(column, 2rem, center, center);
+        position: absolute;
+        width: 100%;
+        background-color: #fff;
+        top: 100%;
+        padding: 2rem;
+        visibility: hidden;
+        opacity: 0;
+        transition: $transition;
+        top: 0;
+    }
+    .header__list {
+        flex-direction: column;
+        font-size: 1.8rem;
+        padding: 2rem;
+    }
+    .header:has(.header__menu-input:checked) .header__nav {
+        visibility: visible;
+        opacity: 1;
+        top: 100%;
+    }
+    .header__buttons {
+        z-index: 1;
+    }
+    .hero,
+    .features {
+        grid-template-columns: 1fr;
+    }
+    .hero__image {
+        grid-row: 1;
+    }
+    .stats {
+        padding: 3.721rem 0;
+    }
+    .plans__boxes {
+        flex-wrap: wrap;
+    }
+    .subscribe {
+        padding: 3rem;
+    }
+    .footer__container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .footer__Link-lists {
+        grid-row: 1;
+    }
+}
+
+@media all and (max-width: 650px) {
+    .header__button--signup {
+        width: 9rem;
+    }
+    .header__button--signin {
+        margin-inline-end: 0.5rem;
+    }
+    .stats {
+        grid-template-columns: 1fr;
+        height: 100%;
+    }
+    .stats__box {
+        gap: 1.5rem;
+        flex-direction: column;
+        padding: 2rem;
+    }
+    .stats__box:nth-of-type(2) {
+        border-block: 2px solid #eeeff2;
+        border-inline: none;
+    }
+    .subscribe {
+        flex-direction: column;
+    }
+}
+
+@media all and (max-width: 450px) {
+    .header__buttons--main {
+        display: none;
+    }
+
+    .header__buttons--nav {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .header__logo {
+        order: -1;
+    }
+}

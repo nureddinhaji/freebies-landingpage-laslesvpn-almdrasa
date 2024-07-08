@@ -49,13 +49,13 @@
 // Stats Section Style
 .stats {
     @extend %grid-3col;
-    padding: 4rem;
+    padding: 3.721rem;
     height: 20rem;
     width: 100%;
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
     &__box {
         @extend %flex-center;
-        gap: 3rem;
+        gap: 3.65rem;
         &:nth-of-type(2) {
             border-inline: 2px solid #eeeff2;
         }
@@ -122,6 +122,7 @@
     &__boxes {
         display: flex;
         gap: 2rem;
+        width: 100%;
     }
     &__box {
         border: 0.2rem solid $borders-color;
@@ -130,6 +131,7 @@
         text-align: center;
         height: 76rem;
         transition: $transition;
+        flex: 1;
         @include flex(column, 3rem);
         &:hover {
             border-color: $primary-color;
@@ -148,6 +150,7 @@
         &-item {
             @include flex($g: 1.5rem, $a: center);
             font-size: 1.4rem;
+            text-align: start;
             &::before {
                 content: url(/images/check.png);
                 width: 2.4rem;
@@ -190,6 +193,7 @@
 // Testimonials Section
 .testimonials {
     @extend .map;
+    overflow: hidden;
     &__header {
         @extend .map__header;
     }
@@ -201,7 +205,8 @@
     }
     &__comments {
         @include flex($g: 4rem);
-        overflow: auto;
+        overflow-x: auto;
+        width: 100%;
     }
     &__comment {
         border: 2px solid $borders-color;

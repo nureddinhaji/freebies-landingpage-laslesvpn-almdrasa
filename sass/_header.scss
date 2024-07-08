@@ -2,8 +2,11 @@
 @use "./mixins" as *;
 
 .header {
-    padding-top: 3rem;
+    position: relative;
     @include flex($j: space-between, $a: center);
+    &__menu {
+        display: none;
+    }
     &__list {
         @include flex(null, 4rem, center, center);
     }
@@ -13,6 +16,9 @@
         &:active {
             color: $primary-color;
         }
+    }
+    &__buttons--nav {
+        display: none;
     }
     &__button {
         font-weight: 500;
@@ -36,6 +42,13 @@
             &:hover {
                 color: $primary-color;
             }
+        }
+    }
+    &__menu {
+        &-line {
+            width: 4rem;
+            height: 0.3rem;
+            background-color: #f53855;
         }
     }
 }
